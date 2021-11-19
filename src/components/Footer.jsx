@@ -76,6 +76,9 @@ class SiteFooter extends React.Component {
             />
           )}
         </div>
+        <div>
+          This is my crazy div
+        </div>
       </footer>
     );
   }
