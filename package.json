@@ -1,6 +1,6 @@
 {
-  "name": "@edx/frontend-component-footer",
-  "version": "1.0.0-semantically-released",
+  "name": "@edunext/frontend-component-footer",
+  "version": "13.0.0-alpha-03",
   "description": "Footer component for use when building Open edX frontend applications",
   "main": "dist/index.js",
   "publishConfig": {
@@ -24,20 +24,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openedx/frontend-component-footer.git"
+    "url": "git+https://github.com/edunext/frontend-component-footer.git"
   },
   "author": "edX",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/openedx/frontend-component-footer/issues"
+    "url": "https://github.com/edunext/frontend-component-footer/issues"
   },
-  "homepage": "https://github.com/openedx/frontend-component-footer#readme",
+  "homepage": "https://github.com/edunext/frontend-component-footer#readme",
   "devDependencies": {
     "@edx/brand": "npm:@edx/brand-openedx@1.2.0",
     "@edx/browserslist-config": "^1.1.1",
     "@edx/frontend-build": "12.8.16",
-    "@edx/frontend-platform": "4.2.0",
-    "@edx/paragon": "^20.19.0",
+    "@edx/frontend-platform": "npm:@edunext/frontend-platform@^3.7.0-alpha-04",
+    "@edx/paragon": "^21.0.0-alpha.23",
     "@edx/reactifex": "^2.1.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
@@ -59,7 +59,7 @@
     "@fortawesome/react-fontawesome": "0.2.0"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^4.0.0",
+    "@edx/frontend-platform": "^4.0.0 || ^3.7.0-alpha-04",
     "prop-types": "^15.5.10",
     "react": "^16.9.0 || ^17.0.0",
     "react-dom": "^16.9.0 || ^17.0.0"
