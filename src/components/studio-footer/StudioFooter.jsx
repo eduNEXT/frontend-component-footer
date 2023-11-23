@@ -67,13 +67,15 @@ const StudioFooter = ({
           <FormattedMessage {...messages.trademarkMessage} />
           <Hyperlink className="ml-1" destination="https://www.edx.org">edX Inc</Hyperlink>.
           <ActionRow.Spacer />
-          <Hyperlink destination="https://open.edx.org" className="float-right">
-            <Image
-              width="120px"
-              alt="Powered by Open edX"
-              src="https://logos.openedx.org/open-edx-logo-tag.png"
-            />
-          </Hyperlink>
+          {!_.isEmpty(config.LOGO_TRADEMARK_URL) && (
+            <Hyperlink destination={config.LOGO_TRADEMARK_REDIRECT} className="float-right">
+              <Image
+                width="120px"
+                alt="Footer logo"
+                src={config.LOGO_TRADEMARK_URL}
+              />
+            </Hyperlink>
+          )}
         </ActionRow>
       </Container>
     </>
