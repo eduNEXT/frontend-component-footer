@@ -35,8 +35,8 @@
   "devDependencies": {
     "@edx/brand": "npm:@edx/brand-openedx@1.2.0",
     "@edx/browserslist-config": "^1.1.1",
-    "@edx/frontend-build": "github:edunext/frontend-build#dcoa/css-variables-13.0.1",
-    "@edx/frontend-platform": "file:../frontend-platform/dist",
+    "@edx/frontend-build": "github:edunext/frontend-build#ednx-release/css-variables-13.0.1",
+    "@edx/frontend-platform": "npm:@edunext/frontend-platform@5.5.4-alpha.4",
     "@edx/paragon": "npm:@openedx/paragon@22.0.0-alpha.25",
     "@edx/reactifex": "^2.1.1",
     "@wojtekmaj/enzyme-adapter-react-17": "0.8.0",
@@ -59,7 +59,7 @@
     "@fortawesome/react-fontawesome": "0.2.0"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^4.0.0 || ^5.0.0 || ^5.5.0-alpha.1",
+    "@edx/frontend-platform": "^4.0.0 || ^5.0.0 || ^5.5.4-alpha.1",
     "prop-types": "^15.5.10",
     "react": "^16.9.0 || ^17.0.0",
     "react-dom": "^16.9.0 || ^17.0.0"
