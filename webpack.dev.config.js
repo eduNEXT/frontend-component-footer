@@ -12,4 +12,9 @@ module.exports = createConfig('webpack-dev', {
       '@edx/frontend-component-footer': path.resolve(__dirname, 'src'),
     },
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'example/dist'),
+    },
+  },
 });
