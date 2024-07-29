@@ -1,6 +1,6 @@
 {
-  "name": "@edx/frontend-component-footer",
-  "version": "1.0.0-semantically-released",
+  "name": "@next/frontend-component-footer",
+  "version": "14.0.0-alpha.1",
   "description": "Footer component for use when building Open edX frontend applications",
   "main": "dist/index.js",
   "publishConfig": {
@@ -25,22 +25,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openedx/frontend-component-footer.git"
+    "url": "git+https://github.com/edunext/frontend-component-footer.git"
   },
   "author": "edX",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/openedx/frontend-component-footer/issues"
+    "url": "https://github.com/edunext/frontend-component-footer/issues"
   },
-  "homepage": "https://github.com/openedx/frontend-component-footer#readme",
+  "homepage": "https://github.com/edunext/frontend-component-footer#readme",
   "devDependencies": {
     "@edx/brand": "npm:@openedx/brand-openedx@^1.2.2",
     "@edx/browserslist-config": "^1.1.1",
-    "@edx/frontend-platform": "8.0.2",
+    "@edx/frontend-platform": "npm:@edunext/frontend-platform@7.1.2-alpha.1",
     "@edx/reactifex": "^2.1.1",
     "@openedx/frontend-build": "14.0.3",
-    "@openedx/frontend-plugin-framework": "^1.1.2",
-    "@openedx/paragon": "22.4.0",
+    "@openedx/frontend-plugin-framework": "github:edunext/frontend-plugin-framework#ednx-release/css-variables-1.2.2",
+    "@openedx/paragon": "23.0.0-alpha.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.1",
     "husky": "8.0.3",
@@ -64,7 +64,7 @@
     "ts-jest": "^29.1.2"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^7.0.0 || ^8.0.0",
+    "@edx/frontend-platform": "^7.0.0 || ^8.0.0 || ^7.1.2-alpha.1",
     "@openedx/paragon": ">= 21.11.3 < 23.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.9.0 || ^17.0.0",
