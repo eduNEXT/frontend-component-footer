@@ -1,5 +1,5 @@
 {
-  "name": "@next/frontend-component-footer",
+  "name": "@edunext/frontend-component-footer",
   "version": "14.0.0-alpha.1",
   "description": "Footer component for use when building Open edX frontend applications",
   "main": "dist/index.js",
