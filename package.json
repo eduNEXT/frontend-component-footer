@@ -34,15 +34,15 @@
   },
   "homepage": "https://github.com/edunext/frontend-component-footer#readme",
   "devDependencies": {
-    "@edx/brand": "npm:@openedx/brand-openedx@^1.2.2",
-    "@edx/browserslist-config": "^1.1.1",
+    "@edx/brand": "npm:@openedx/brand-openedx@1.2.2",
+    "@edx/browserslist-config": "1.1.1",
     "@edx/frontend-platform": "npm:@edunext/frontend-platform@7.1.2-alpha.1",
-    "@edx/reactifex": "^2.1.1",
+    "@edx/reactifex": "2.1.1",
     "@openedx/frontend-build": "14.0.3",
     "@openedx/frontend-plugin-framework": "github:edunext/frontend-plugin-framework#ednx-release/css-variables-1.2.2",
     "@openedx/paragon": "23.0.0-alpha.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^12.1.1",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "12.1.1",
     "husky": "8.0.3",
     "prop-types": "15.8.1",
     "react": "17.0.2",
@@ -59,15 +59,15 @@
     "@fortawesome/free-regular-svg-icons": "6.5.2",
     "@fortawesome/free-solid-svg-icons": "6.5.2",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "lodash": "^4.17.21",
-    "ts-jest": "^29.1.2"
+    "jest-environment-jsdom": "29.7.0",
+    "lodash": "4.17.21",
+    "ts-jest": "29.1.2"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^7.0.0 || ^8.0.0 || ^7.1.2-alpha.1",
+    "@edx/frontend-platform": "7.0.0 || 8.0.0 || 7.1.2-alpha.1",
     "@openedx/paragon": ">= 21.11.3 < 23.0.0",
-    "prop-types": "^15.5.10",
-    "react": "^16.9.0 || ^17.0.0",
-    "react-dom": "^16.9.0 || ^17.0.0"
+    "prop-types": "15.5.10",
+    "react": "16.9.0 || 17.0.0",
+    "react-dom": "16.9.0 || 17.0.0"
   }
 }
