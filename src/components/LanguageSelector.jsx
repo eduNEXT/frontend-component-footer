@@ -1,14 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from '@edx/frontend-platform/i18n';
+import { publish } from '@edx/frontend-platform';
+import { getLocale, injectIntl, intlShape, FormattedMessage, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { useAppEvent } from '@edx/frontend-platform/react';
+
+import { patchPreferences, postSetLang } from './data/api';
+
+
+const onLanguageSelected = (username, selectedLanguageCode) => {
+    patchPreferences(username, { prefLang: selectedLanguageCode });
+    postSetLang(selectedLanguageCode);
+    publish(LOCALE_CHANGED, getLocale()); // TODO check the way to reflesh the lang in the MFE without reload the site
+}
 
 const LanguageSelector = ({
-  intl, options, onSubmit, ...props
+  intl, options, ...props
 }) => {
+  const { username } = getAuthenticatedUser();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const previousSiteLanguage = getLocale();
     const languageCode = e.target.elements['site-footer-language-select'].value;
-    onSubmit(languageCode);
+    if(previousSiteLanguage !== languageCode){
+      onLanguageSelected(username, languageCode);
+    }
   };
 
   return (
