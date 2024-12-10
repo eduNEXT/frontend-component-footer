@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getLocale, injectIntl, intlShape, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
+import { getLocale, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
 import { ensureConfig } from '@edx/frontend-platform';
-import { AppContext, useAppEvent } from '@edx/frontend-platform/react';
+import { AppContext } from '@edx/frontend-platform/react';
 
 import messages from './Footer.messages';
 import LanguageSelector from './LanguageSelector';
@@ -39,8 +39,7 @@ class SiteFooter extends React.Component {
       logo,
       intl,
     } = this.props;
-    const showLanguageSelector = true;
-    const { config } = this.context;
+    const { config, authenticatedUser } = this.context;
 
     return (
       <footer
@@ -60,9 +59,10 @@ class SiteFooter extends React.Component {
             />
           </a>
           <div className="flex-grow-1" />
-          {showLanguageSelector && (
+          { config.ENABLE_FOOTER_LANG_SELECTOR && (
             <LanguageSelector
               options={config.SITE_SUPPORTED_LENGUAGES}
+              authenticatedUser={authenticatedUser}
             />
           )}
         </div>

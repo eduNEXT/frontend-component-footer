@@ -1,30 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { publish } from '@edx/frontend-platform';
-import { getLocale, injectIntl, intlShape, FormattedMessage, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { useAppEvent } from '@edx/frontend-platform/react';
+import { getLocale, injectIntl, intlShape, FormattedMessage, LOCALE_CHANGED, handleRtl } from '@edx/frontend-platform/i18n';
+import { logError } from '@edx/frontend-platform/logging';
 
 import { patchPreferences, postSetLang } from './data/api';
 
-
-const onLanguageSelected = (username, selectedLanguageCode) => {
-    patchPreferences(username, { prefLang: selectedLanguageCode });
-    postSetLang(selectedLanguageCode);
-    publish(LOCALE_CHANGED, getLocale()); // TODO check the way to reflesh the lang in the MFE without reload the site
+const onLanguageSelected = async (username, selectedLanguageCode) => {
+  try {
+    if(username){
+      await patchPreferences(username, { prefLang: selectedLanguageCode });
+      await postSetLang(selectedLanguageCode);
+    }
+    publish(LOCALE_CHANGED, getLocale());
+    handleRtl();
+  } catch (error) {
+    logError(error);
+  }
 }
 
 const LanguageSelector = ({
-  intl, options, ...props
+  intl, options, authenticatedUser, ...props
 }) => {
-  const { username } = getAuthenticatedUser();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const previousSiteLanguage = getLocale();
     const languageCode = e.target.elements['site-footer-language-select'].value;
     if(previousSiteLanguage !== languageCode){
-      onLanguageSelected(username, languageCode);
+      onLanguageSelected(authenticatedUser?.username, languageCode);
     }
   };
 
@@ -64,8 +67,10 @@ const LanguageSelector = ({
 };
 
 LanguageSelector.propTypes = {
+  authenticatedUser: PropTypes.shape({
+    username: PropTypes.string
+  }),
   intl: intlShape.isRequired,
-  onSubmit: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     label: PropTypes.string,
